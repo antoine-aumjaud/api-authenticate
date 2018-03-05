@@ -8,7 +8,8 @@
     "build-config": "./build-config.sh",
     "debug":     "npm run build-config && cd src && node --inspect server.js",
     "start":     "npm run build-config && cd src && node server.js",
-    "start-mon": "npm run build-config && cd src && nodemon server.js"
+    "start-mon": "npm run build-config && cd src && nodemon server.js",
+    "test":      "echo No test defined"
   },
   "main": "src/server.js",
   "repository": "https://github.com/antoine-aumjaud/api-authenticate",
