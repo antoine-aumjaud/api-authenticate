@@ -15,8 +15,8 @@ cache:
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker build -t antoineaumjaud/api-family:latest .;
-    docker push antoineaumjaud/api-family;
+    docker build -t antoineaumjaud/api-authenticate:latest .;
+    docker push antoineaumjaud/api-authenticate;
     fi
 
 notifications:
