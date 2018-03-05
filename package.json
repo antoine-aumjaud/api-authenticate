@@ -1,0 +1,21 @@
+{
+  "name": "api-autenticate",
+  "version": "1.0.0",
+  "description": "API Authenticate",
+  "license": "MIT",
+  "author": "Antoine Aumjaud",
+  "scripts": {
+    "build-config": "./build-config.sh",
+    "debug":     "npm run build-config && cd src && node --inspect server.js",
+    "start":     "npm run build-config && cd src && node server.js",
+    "start-mon": "npm run build-config && cd src && nodemon server.js"
+  },
+  "main": "src/server.js",
+  "repository": "https://github.com/antoine-aumjaud/api-authenticate",
+  "dependencies": {
+    "jsonwebtoken": "^8.2.0",
+    "express": "^4.15.3",
+    "fs": "^0.0.1-security",
+    "crypto": "^1.0.1"
+  }
+}
