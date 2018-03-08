@@ -18,6 +18,10 @@ module.exports = express.Router()
         res.status(401).json({error: e});        
     }
 })
+.post('/secure/auth', urlencodedParser, (req, res) => {
+    const data = signService.securedSign(req.body.login); 
+    res.json({token: data});
+})
 .post('/secure/hashPassword', urlencodedParser, (req, res) => {
     const data = signService.hashPassword(req.body.password); 
     res.json({value: data});
