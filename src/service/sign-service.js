@@ -13,8 +13,12 @@ exports.sign = (login, password) => {
     
     if(config.auth[login] && config.auth[login].password === hashedPassword) { //TODO encode password
         const cert  = fs.readFileSync(config.privateKey); 
-        return jwt.sign({ autorization: config.auth[login].autorization }, cert, 
-            { algorithm: 'RS256'});
+        return jwt.sign(
+            { 
+                login:        login,
+                name:         config.auth[login].name,
+                autorization: config.auth[login].autorization 
+            }, cert, { expiresIn: 2*60 , algorithm: 'RS256'});
     }
     else {
         throw "Can't login with user: " + login;

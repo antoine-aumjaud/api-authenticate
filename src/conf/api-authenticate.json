@@ -3,6 +3,7 @@
     "privateKey" : "data/private.pem",
     "auth": {
         "antoine" : {
+            "name": "Antoine",
             "password": "Hw3qgKGvTu+jUsBL2qp595Qzp7RYquqpJ8tzrJ9jMmo=",
             "autorization": "all"
         }
