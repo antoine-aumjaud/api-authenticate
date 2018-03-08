@@ -13,7 +13,7 @@ exports.sign = (login, password) => {
     if(config.auth[login]
         && config.auth[login].type == "user" 
         && config.auth[login].password === hashedPassword) { //TODO encode password
-        return createToken(login);
+        return createToken(login, 60*10);
     }
     else {
         throw "Can't login with user: " + login;
@@ -21,7 +21,7 @@ exports.sign = (login, password) => {
 };
 exports.securedSign = (login) => {
     if(config.auth[login] && config.auth[login].type == "app") { 
-        return createToken(login);
+        return createToken(login, 60);
     }
     else {
         throw "Can't login for app: " + login;
@@ -33,7 +33,7 @@ exports.hashPassword = (password) => {
     return hash.digest('base64');
 };
 
-const createToken = (login) => {
+const createToken = (login, timeoutInSeconds) => {
     const cert  = fs.readFileSync(config.privateKey); 
     return jwt.sign(
         { 
@@ -41,5 +41,5 @@ const createToken = (login) => {
             name:         config.auth[login].name,
             autorization: config.auth[login].autorization 
         }, 
-        cert, { expiresIn: 2*60 , algorithm: 'RS256'});
+        cert, { expiresIn: timeoutInSeconds, algorithm: 'RS256'});
 };
