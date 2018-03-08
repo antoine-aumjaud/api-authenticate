@@ -1,6 +1,6 @@
 {
   "name": "api-autenticate",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "API Authenticate",
   "license": "MIT",
   "author": "Antoine Aumjaud",
@@ -16,7 +16,6 @@
   "dependencies": {
     "jsonwebtoken": "^8.2.0",
     "express": "^4.15.3",
-    "fs": "^0.0.1-security",
     "crypto": "^1.0.1"
   }
 }
