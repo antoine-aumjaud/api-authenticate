@@ -12,7 +12,7 @@ exports.sign = (login, password) => {
     const hashedPassword = this.hashPassword(password)
     if(config.auth[login]
         && config.auth[login].type == "user" 
-        && config.auth[login].password === hashedPassword) { //TODO encode password
+        && config.auth[login].password === hashedPassword) {
         return createToken(login, 60*10);
     }
     else {
@@ -20,7 +20,8 @@ exports.sign = (login, password) => {
     }
 };
 exports.securedSign = (login) => {
-    if(config.auth[login] && config.auth[login].type == "app") { 
+    if(config.auth[login] 
+        && config.auth[login].type == "app") { 
         return createToken(login, 60);
     }
     else {
