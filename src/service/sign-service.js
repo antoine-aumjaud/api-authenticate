@@ -6,8 +6,6 @@ const crypto = require('crypto');
 
 const config = require('../conf/api-authenticate.json');
 
-
-//add data 
 exports.sign = (login, password) => {
     const hashedPassword = this.hashPassword(password)
     if(config.auth[login]

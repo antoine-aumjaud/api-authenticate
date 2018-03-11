@@ -6,16 +6,18 @@
   "author": "Antoine Aumjaud",
   "scripts": {
     "build-config": "./build-config.sh",
-    "debug":     "npm run build-config && cd src && node --inspect server.js",
-    "start":     "npm run build-config && cd src && node server.js",
+    "debug": "npm run build-config && cd src && node --inspect server.js",
+    "start": "npm run build-config && cd src && node server.js",
     "start-mon": "npm run build-config && cd src && nodemon server.js",
-    "test":      "echo No test defined"
+    "test": "echo No test defined"
   },
   "main": "src/server.js",
   "repository": "https://github.com/antoine-aumjaud/api-authenticate",
   "dependencies": {
-    "jsonwebtoken": "^8.2.0",
+    "api-nodelib": "antoine-aumjaud/api-nodelib#master",
+    "crypto": "^1.0.1",
     "express": "^4.15.3",
-    "crypto": "^1.0.1"
+    "jsonwebtoken": "^8.2.0",
+    "nodelib": "antoine-aumjaud/api-nodelib#master"
   }
 }
