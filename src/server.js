@@ -1,7 +1,7 @@
 "use strict";
 
 const express = require('express');
-const nodelib = require('nodelib')
+const nodelib = require('api-nodelib')
 
 const techRouter = new nodelib.ExpressApp(
     'conf-common.json', 
