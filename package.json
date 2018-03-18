@@ -14,9 +14,9 @@
   "main": "src/server.js",
   "repository": "https://github.com/antoine-aumjaud/api-authenticate",
   "dependencies": {
+    "api-nodelib": "antoine-aumjaud/api-nodelib#master",
     "crypto": "^1.0.1",
     "express": "^4.15.3",
-    "jsonwebtoken": "^8.2.0",
-    "api-nodelib": "antoine-aumjaud/api-nodelib#master"
+    "jsonwebtoken": "^8.2.0"
   }
 }

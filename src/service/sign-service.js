@@ -11,7 +11,7 @@ exports.sign = (login, password) => {
     if(config.auth[login]
         && config.auth[login].type == "user" 
         && config.auth[login].password === hashedPassword) {
-        return createToken(login, 60*10);
+        return createToken(login, 60*10); // 10 minutes
     }
     else {
         throw "Can't login with user: " + login;
@@ -20,7 +20,7 @@ exports.sign = (login, password) => {
 exports.securedSign = (login) => {
     if(config.auth[login] 
         && config.auth[login].type == "app") { 
-        return createToken(login, 60);
+        return createToken(login, 60);  // 1 minutes
     }
     else {
         throw "Can't login for app: " + login;

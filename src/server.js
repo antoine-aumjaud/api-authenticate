@@ -3,9 +3,7 @@
 const express = require('express');
 const nodelib = require('api-nodelib')
 
-const techRouter = new nodelib.ExpressApp(
-    'conf-common.json', 
-    'conf/api-authenticate.json').router();
+const techRouter = new nodelib.ExpressApp('api-authenticate').router();
 const authenticateResource = require('./requesthandler/authenticate-resource');
 
 express()
