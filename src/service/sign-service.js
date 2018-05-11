@@ -6,20 +6,29 @@ const crypto = require('crypto');
 
 const config = require('../conf/api-authenticate.json');
 
-exports.sign = (login, password) => {
+exports.userSign = (login, password) => {
     const hashedPassword = this.hashPassword(password)
     if(config.auth[login]
-        && config.auth[login].type == "user" 
-        && config.auth[login].password === hashedPassword) {
+    && config.auth[login].type == "user" 
+    && config.auth[login].password === hashedPassword) {
         return createToken(login, 60*10); // 10 minutes
     }
     else {
         throw "Can't login with user: " + login;
     }
 };
-exports.securedSign = (login) => {
+exports.renewUserSign = (login) => {
     if(config.auth[login] 
-        && config.auth[login].type == "app") { 
+    && config.auth[login].type == "user") { 
+        return createToken(login, 60*10);  // 10 minutes
+    }
+    else {
+        throw "Can't renew token for user: " + login;
+    }
+};
+exports.appSign = (login) => {
+    if(config.auth[login] 
+    && config.auth[login].type == "app") { 
         return createToken(login, 60);  // 1 minutes
     }
     else {
