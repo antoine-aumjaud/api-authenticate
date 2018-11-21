@@ -1,11 +1,11 @@
 {
   "name": "api-autenticate",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "API Authenticate",
   "license": "MIT",
   "author": "Antoine Aumjaud",
   "scripts": {
-    "build-config": "./build-config.sh",
+    "build-config": "build-config.sh",
     "debug": "npm run build-config && cd src && node --inspect server.js",
     "start": "npm run build-config && cd src && node server.js",
     "start-mon": "npm run build-config && cd src && nodemon server.js",
